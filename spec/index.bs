@@ -1569,7 +1569,7 @@ This restriction can be controlled using the mechanisms described in [[PERMISSIO
 
 Note: Algorithms specified in [[!CREDENTIAL-MANAGEMENT-1]] perform the actual
 permissions policy evaluation. This is because such policy evaluation needs to
-occur when there is access to the [=current settings object=]. The [=internal method=]s
+occur when there is access to the [=current principal settings object=]. The [=internal method=]s
 modified by this specification do not have such access since they are invoked [=in parallel=]
 by {{CredentialsContainer}}'s <a abstract-op>Request a `Credential`</a> abstract operation.
 
@@ -1992,14 +1992,14 @@ interface IdentityProvider {
 <div algorithm=login>
 When the {{IdentityProvider/login()}} static method is invoked the user agent MUST execute the following
 steps:
-    1. Let |origin| be the [=current settings object=]'s [=environment settings object/origin=].
+    1. Let |origin| be the [=current principal settings object=]'s [=environment settings object/origin=].
     1. Set the [=Sign-in Status=] of the |origin| to {{Sign-in Status/signed-in}}.
 </div>
 
 <div algorithm=logout>
 When the {{IdentityProvider/logout()}} static method is invoked the user agent MUST execute the following
 steps:
-    1. Let |origin| be the [=current settings object=]'s [=environment settings object/origin=].
+    1. Let |origin| be the [=current principal settings object=]'s [=environment settings object/origin=].
     1. Set the [=Sign-in Status=] of the |origin| to {{Sign-in Status/signed-out}}.
 </div>
 
